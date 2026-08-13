@@ -1,9 +1,9 @@
-# Chapter 1: Getting Started with Natural Language Processing
-*Lecture Notes — Module 1*
+# Module 2: Getting Started with Natural Language Processing
+*Lecture Notes — Module 2*
 
 Welcome, everyone. In this first set of notes, I want to give you a solid, friendly introduction to Natural Language Processing — or "NLP" for short. We'll cover three things: what NLP actually is, why it matters so much in the world around us, and why Python has become the go-to language for building NLP projects. Don't worry about memorizing every detail on your first read. My goal here is for you to walk away with a clear mental picture of the field before we start writing code together.
 
-## 1.1 What Is Natural Language Processing?
+## 2.1 What Is Natural Language Processing?
 
 Let's start with a simple definition. Natural Language Processing is a branch of artificial intelligence concerned with one big question: how can we get computers to work with human language? "Working with" language can mean many things — reading it, understanding what it means, and even producing new language of its own.
 
@@ -13,7 +13,7 @@ You already use NLP every day, probably without noticing it. When you type a que
 
 Of course, none of this is easy for a machine. Human language is ambiguous, deeply tied to context, and incredibly diverse across cultures. Building systems that handle these challenges well requires thoughtful design and clever algorithms, which is exactly what we'll be building toward this semester.
 
-### 1.1.1 Defining the Scope of NLP
+### 2.1.1 Defining the Scope of NLP
 
 NLP is often described as sitting at the intersection of three fields: linguistics, computer science, and artificial intelligence. To make sense of such a broad field, it helps to break it down into a few layers of analysis. Think of these as different "levels of understanding" a computer must climb through to truly grasp a piece of text.
 
@@ -24,7 +24,7 @@ NLP is often described as sitting at the intersection of three fields: linguisti
 
 You can think of these four levels as a staircase. Each step builds on the one below it, moving from "What are the words?" all the way up to "What is this person actually trying to tell me?"
 
-### 1.1.2 A Quick Tour of NLP Applications
+### 2.1.2 A Quick Tour of NLP Applications
 
 Let's look at a few real-world applications so this feels less abstract.
 
@@ -41,13 +41,13 @@ Let's look at a few real-world applications so this feels less abstract.
 
 Notice the pattern across all of these examples: somewhere, unstructured human text is being turned into something a machine can act on.
 
-### 1.1.3 Why Should You Care About NLP?
+### 2.1.3 Why Should You Care About NLP?
 
 Here's the big picture. NLP matters because it turns an enormous, mostly untapped resource — the world's text and speech — into something we can actually analyze and use. Every day, we produce staggering amounts of language: emails, reviews, articles, tweets, medical notes, legal contracts. Most of this data used to be locked away, readable only by humans, one document at a time. NLP gives us the tools to process it at scale.
 
 This matters in very concrete ways. A hospital can scan thousands of clinical notes to spot patterns in patient care. A law firm can review contracts in a fraction of the time it used to take. A business can understand, almost instantly, whether its customers are happy or frustrated. None of this replaces human judgment — but it dramatically speeds up the process of getting useful insight out of language.
 
-### 1.1.4 A First Taste of Code: Tokenization
+### 2.1.4 A First Taste of Code: Tokenization
 
 Let's ground this with a small, concrete example. One of the very first steps in almost any NLP pipeline is tokenization — breaking a sentence down into individual pieces, called tokens. These tokens are usually words or punctuation marks.
 
@@ -74,7 +74,7 @@ Let's walk through what's happening, one line at a time:
 
 Why does this matter? Because almost every later step in an NLP pipeline — counting word frequencies, tagging parts of speech, feeding text into a machine learning model — needs text broken into these clean, discrete pieces first. Tokenization is the humble but essential first step.
 
-### 1.1.5 The Honest Challenges of NLP
+### 2.1.5 The Honest Challenges of NLP
 
 I don't want to give you the impression this is all smooth sailing — NLP is genuinely hard, and it's worth understanding why up front, because these challenges will come up again and again this semester.
 
@@ -91,11 +91,11 @@ I don't want to give you the impression this is all smooth sailing — NLP is ge
 
 We'll return to many of these challenges throughout the course as we build increasingly capable tools. For now, just keep them in the back of your mind — they're the reason NLP is such an active and evolving research area.
 
-## 1.2 Why NLP Matters — and Where We See It in Action
+## 2.2 Why NLP Matters — and Where We See It in Action
 
 Now that you know what NLP is, let's spend some time appreciating just how much it shapes our daily lives — and look at a handful of hands-on examples so the ideas stick.
 
-### 1.2.1 Five Reasons NLP Is a Big Deal
+### 2.2.1 Five Reasons NLP Is a Big Deal
 
 **Enhanced Communication**
 NLP lets people interact with technology using ordinary, everyday language instead of memorizing rigid commands. That might sound small, but it's a huge accessibility win — it means more people, regardless of technical background, can use modern technology comfortably.
@@ -112,7 +112,7 @@ We generate a staggering amount of text every day — social posts, reviews, bus
 **Personalization**
 By analyzing what you write, search for, and interact with, NLP helps platforms tailor content specifically to you — think of how a streaming service recommends shows, or how an online store suggests products based on your past reviews and browsing habits.
 
-### 1.2.2 Applications, With Examples You Can Run
+### 2.2.2 Applications, With Examples You Can Run
 
 **Search Engines**
 When you type "best restaurants near me" into a search engine, NLP is working behind the scenes to figure out that you want highly-rated places close to your current location — not just pages that happen to contain those exact words.
@@ -176,7 +176,7 @@ We first wrap our text in a parser, then hand it to an `LsaSummarizer`, asking f
 **Healthcare, Legal Tech, and E-Commerce**
 In healthcare, NLP helps clinicians extract useful information from clinical notes and predict patient outcomes from historical data. In the legal field, it speeds up contract review and helps flag compliance risks buried in dense legal text. In e-commerce, it powers product recommendations, smarter search, and customer-service chatbots — while also mining reviews for recurring complaints or praise that a business can act on.
 
-### 1.2.3 A Worked Example: Analyzing Customer Reviews
+### 2.2.3 A Worked Example: Analyzing Customer Reviews
 
 Let's tie several of these ideas together with a small, realistic example: scanning a handful of customer reviews and scoring their sentiment automatically.
 
@@ -205,18 +205,18 @@ Here we use NLTK's VADER tool, which is specifically tuned for short, informal t
 
 This little script is a great example of how much insight a business can extract automatically — imagine running this across thousands of reviews instead of just three.
 
-## 1.3 Why We'll Be Using Python
+## 2.3 Why We'll Be Using Python
 
 Every field needs a workshop full of good tools, and for NLP, Python is that workshop. Let's talk about why, and then get your environment ready so we can start writing real code together.
 
-### 1.3.1 What Makes Python a Great Fit for NLP
+### 2.3.1 What Makes Python a Great Fit for NLP
 
 - **Readable and Simple**: Python's clean syntax means you can focus on the ideas behind an NLP algorithm instead of fighting with the language itself.
 - **Rich Libraries**: Tools like NLTK, spaCy, and gensim come with ready-made functions and pre-trained models, so you're rarely starting from scratch.
 - **A Large Community**: because so many people use Python for NLP, you'll find plenty of tutorials, documentation, and forums to lean on when you get stuck.
 - **Strong Machine Learning Integration**: Python connects smoothly with libraries like TensorFlow, PyTorch, and scikit-learn, so you can move from basic text processing to full machine learning models without switching languages.
 
-### 1.3.2 The Core Libraries We'll Use
+### 2.3.2 The Core Libraries We'll Use
 
 **NLTK — the Natural Language Toolkit**
 NLTK is one of the oldest and most complete NLP libraries in Python. It's especially good for learning, since it exposes the building blocks — tokenizing, stemming, lemmatizing, and more — in a very transparent way.
@@ -297,7 +297,7 @@ print(prediction)  # [0]
 
 Here's the flow: `CountVectorizer` turns our sentences into a table of word counts that a machine learning model can actually work with. We train a Naive Bayes classifier on that table alongside our labels (1 for positive, 0 for negative). Finally, we transform a brand-new sentence the same way and ask the trained classifier to predict its sentiment — in this case, correctly guessing negative.
 
-### 1.3.3 Setting Up Your Own Environment
+### 2.3.3 Setting Up Your Own Environment
 
 Before our next session, please set up Python on your own machine so you're ready to follow along with hands-on exercises.
 
@@ -369,7 +369,7 @@ X = vectorizer.fit_transform([text])
 print("CountVectorizer Feature Names:", vectorizer.get_feature_names_out())
 ```
 
-### 1.3.4 Putting It All Together: A Mini Pipeline
+### 2.3.4 Putting It All Together: A Mini Pipeline
 
 Let's close this section by combining several tools into one small end-to-end pipeline — text processing, feature extraction, and classification, chained together. This is a preview of how real NLP projects are structured.
 
