@@ -1,7 +1,5 @@
 # Module 2: Getting Started with Natural Language Processing
 
-*A beginner-friendly guide*
-
 Welcome! This module answers three big questions:
 
 1. **What is NLP, actually?**
