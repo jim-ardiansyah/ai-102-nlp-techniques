@@ -1,5 +1,7 @@
 # Module 2: Getting Started with Natural Language Processing
 
+*A beginner-friendly guide*
+
 Welcome! This module answers three big questions:
 
 1. **What is NLP, actually?**
@@ -375,7 +377,9 @@ Result: `[0]` — correctly predicted as negative.
 
 ### Setting Up Your Own Environment
 
-Before our next session, please set up Python on your own machine so you're ready to follow along.
+We’ll use Google Colab for our Python programming in this course, so you don’t need to install Python or any additional software on your computer.
+
+However, if you prefer to run Python on your local machine, you can follow the instructions below to install and set up the necessary tools. Running Python locally is completely optional—Google Colab is recommended for this course because it provides an easy setup and allows you to start coding right away.
 
 **Step 1 — Install Python**
 
