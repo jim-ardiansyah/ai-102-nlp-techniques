@@ -1,18 +1,9 @@
-# Chapter 6: Sentiment Analysis (Simple Study Guide)
-
-**Sentiment analysis** means teaching a computer to figure out the *feeling* behind a piece of text. Is a review happy, angry, or neutral?
-
-This chapter shows three ways to do it, from simplest to most powerful:
-
-| Approach | How it works | Think of it like... |
-|---|---|---|
-| **Rule-based** (6.1) | Humans write rules and word lists | Following a recipe card |
-| **Machine learning** (6.2) | The computer learns patterns from labeled examples | Learning by looking at graded homework |
-| **Deep learning** (6.3) | Big neural networks learn everything on their own from lots of data | A student who reads millions of books |
+# Module 7: Sentiment Analysis
+### Rule-based, Machine learning, Deep learning 
 
 ---
 
-## 6.1 Rule-Based Approaches
+## 7.1 Rule-Based Approaches
 
 ### What is it?
 
@@ -93,7 +84,7 @@ AFINN adds up the scores of the words ("hate" and "nightmare" are both negative)
 
 ---
 
-## 6.2 Machine Learning Approaches
+## 7.2 Machine Learning Approaches
 
 ### What is it?
 
@@ -211,7 +202,7 @@ The book gets 100% accuracy, but that's only because the dataset is tiny. Real p
 
 ---
 
-## 6.3 Deep Learning Approaches
+## 7.3 Deep Learning Approaches
 
 ### What is it?
 
@@ -348,16 +339,3 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=2e-5),
 | Handles sarcasm/context? | Poorly | Somewhat | Best |
 | Best when... | You need transparency or have no data | You have a decent labeled dataset | You have lots of data and strong hardware |
 
----
-
-## Heads-up: problems in the book's examples
-
-Keep these in mind if you run the code:
-
-- **The datasets are way too small.** Every example uses only 4 sentences, and `test_size=0.25` leaves just **1 sentence** for testing. Scores like "100% accuracy" or "50% accuracy" mean almost nothing. (With 1 test sentence, accuracy can only be 0% or 100%, so the "0.5" in the book's deep learning outputs can't actually happen.)
-- **Missing import in 6.2**: the logistic regression example uses `TfidfVectorizer` without importing it in that block. Add `from sklearn.feature_extraction.text import TfidfVectorizer`.
-- **Labels for Keras**: convert labels with `np.array(labels)` before training. Plain Python lists can cause errors.
-- **Newer Keras (TensorFlow 2.16+)**: `tensorflow.keras.preprocessing.text.Tokenizer` has been removed, and the `input_length` argument in `Embedding` is no longer used. Newer code uses the `TextVectorization` layer instead.
-- **Model name typos**: the book shows `'bertbase-uncased'`. The correct name is `'bert-base-uncased'`. The learning rate should be `2e-5` (0.00002), not `2e5`.
-- **BERT and TensorFlow**: recent versions of the Hugging Face `transformers` library have moved away from TensorFlow, so most current BERT tutorials use PyTorch. Also, the book only passes `input_ids` to BERT; normally you pass the `attention_mask` too.
-- **`max_length=10` is very short for BERT**: some of the sample sentences get cut off. Values like 64 or 128 are more typical.
