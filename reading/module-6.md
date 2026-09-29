@@ -1,10 +1,11 @@
-# Chapter 5: Understanding Sentence Structure (Simple Study Guide)
+# Module 6: Syntax and Parsing
+### Parts of Speech (POS) Tagging, Named Entity Recognition (NER), and  Dependency Parsing
 
 This chapter covers three tools that help computers understand how sentences are built: **POS tagging** (what kind of word is this?), **Named Entity Recognition** (is this word a name, place, or amount?), and **Dependency Parsing** (how do the words connect to each other?).
 
 ---
 
-## 5.1 Parts of Speech (POS) Tagging
+## 6.1 Parts of Speech (POS) Tagging
 
 ### What is it?
 
@@ -83,7 +84,7 @@ Parsing sentence structure, finding names (proper nouns often signal names), sen
 
 ---
 
-## 5.2 Named Entity Recognition (NER)
+## 6.2 Named Entity Recognition (NER)
 
 ### What is it?
 
@@ -168,7 +169,7 @@ Search engines (finding documents about a specific person or company), question 
 
 ---
 
-## 5.3 Dependency Parsing
+## 6.3 Dependency Parsing
 
 ### What is it?
 
@@ -247,14 +248,3 @@ The steps are almost the same as custom NER: start with a blank model, add a "pa
 | NER | Is this a name, place, date, or amount? | "Apple" → organization |
 | Dependency parsing | How are the words connected? | "cat" → subject of "sat" |
 
----
-
-## Heads-up: a few problems in the book's code
-
-If you try running the examples, watch out for these:
-
-- **NLTK downloads**: newer NLTK versions need `nltk.download('punkt_tab')` and `nltk.download('averaged_perceptron_tagger_eng')` instead of the older names.
-- **Old spaCy commands**: `nlp.begin_training()` is from spaCy version 2. In version 3 (the current one), use `nlp.initialize()`.
-- **iPhone position mistake**: in the custom NER training data, "iPhone" in "Apple is releasing a new iPhone." is at characters 25 to 31, not 26 to 32. With the wrong numbers, spaCy will complain or learn the wrong thing.
-- **NER evaluation example**: the book passes lists of entity strings to scikit-learn's precision and recall functions. That treats each position as a class label rather than truly matching entities, so it isn't how NER is really evaluated. Real NER evaluation compares entity spans and labels (tools like `seqeval` or spaCy's built-in scorer do this).
-- **Custom parser training data**: the example labels are inconsistent. For instance, "playing" is labeled "aux" and "tennis" is labeled "prep," which don't match the sentence. The sample output "books (pobj): reading" is also wrong, since "books" should be the direct object (dobj). Treat that example as showing the *steps*, not correct grammar.
